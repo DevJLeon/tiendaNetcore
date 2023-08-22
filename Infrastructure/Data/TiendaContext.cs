@@ -1,12 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Reflection;
+using Core.Entities;
+using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Data
+namespace Infrastructure.Data;
+public class TiendaContext : DbContext
 {
-    public class TiendaContext
+    public TiendaContext(DbContextOptions<TiendaContext> options) : base(options)
     {
-        
     }
+    public DbSet<Producto> Productos { get; set; }
 }
